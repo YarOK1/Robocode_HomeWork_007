@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Керування світломузикою (домашня робота Ярослава)</title>
+</head>
+<body>
+  <h1>Керування світломузикою</h1>
+  <button onclick="sendRequest('/mode1')">Mode 1</button>
+  <button onclick="sendRequest('/mode2')">Mode 2</button>
+  <button onclick="sendRequest('/mode3')">Mode 3</button>
+
+  <script>
+    function sendRequest(mode) {
+      fetch("http://192.168.1.101" + mode) // Заміни IP на свою
+        .then(response => console.log("Команда відправлена: " + mode))
+        .catch(error => console.log("Помилка: " + error));
+    }
+  </script>
+</body>
+</html>
