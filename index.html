@@ -11,7 +11,7 @@
 
   <script>
     function sendRequest(mode) {
-      fetch("http://192.168.1.101" + mode) // Заміни IP на свою
+      fetch("http://192.168.0.101" + mode) // Заміни IP на свою
         .then(response => console.log("Команда відправлена: " + mode))
         .catch(error => console.log("Помилка: " + error));
     }
