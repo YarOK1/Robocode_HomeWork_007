@@ -5,13 +5,13 @@
 </head>
 <body>
   <h1>Керування світломузикою</h1>
-  <button onclick="sendRequest('/mode1')">Mode 1</button>
-  <button onclick="sendRequest('/mode2')">Mode 2</button>
-  <button onclick="sendRequest('/mode3')">Mode 3</button>
+  <button onclick="sendRequest('/mode1')">Режим 1</button>
+  <button onclick="sendRequest('/mode2')">Режим 2</button>
+  <button onclick="sendRequest('/mode3')">Режим 3</button>
 
   <script>
     function sendRequest(mode) {
-      fetch("http://192.168.0.101" + mode) // Заміни IP на свою
+      fetch("https://192.168.0.101:443" + mode)
         .then(response => console.log("Команда відправлена: " + mode))
         .catch(error => console.log("Помилка: " + error));
     }
