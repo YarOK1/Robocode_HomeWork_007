@@ -10,8 +10,11 @@
   <button onclick="sendRequest('/mode3')">Режим 3</button>
 
   <script>
+    // Замініть цю IP-адресу на ту, яку видає ваш ESP32 у Serial Monitor
+    const esp32Ip = "192.168.0.101"; // Оновіть це значення
+
     function sendRequest(mode) {
-      fetch("https://192.168.0.101:443" + mode)
+      fetch(`http://${esp32Ip}:80${mode}`)
         .then(response => console.log("Команда відправлена: " + mode))
         .catch(error => console.log("Помилка: " + error));
     }
