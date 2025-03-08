@@ -37,25 +37,24 @@
   <button onclick="sendRequest('/mode6')">Режим 6: Обидва квадрати (32 LED)</button><br>
   <button onclick="sendRequest('/mode7')">Режим 7: Усе разом (60 LED)</button>
 
-  <script>
-    const esp32Ip = "192.168.0.81";
+<script>
+  const esp32Ip = "192.168.0.81"; // Онови на актуальну IP
 
-    function sendRequest(mode) {
-      fetch(`http://${esp32Ip}:80${mode}`)
-        .then(response => {
-          if (response.ok) {
-            console.log("Команда відправлена: " + mode);
-            alert("Режим " + mode.slice(1) + " активовано!");
-          } else {
-            console.log("Помилка: " + response.status);
-            alert("Помилка при відправці команди!");
-          }
-        })
-        .catch(error => {
-          console.log("Помилка: " + error);
-          alert("Не вдалося підключитися до ESP32!");
-        });
-    }
+  function sendRequest(mode) {
+    fetch(`http://${esp32Ip}:80${mode}`)
+      .then(response => {
+        if (response.ok) {
+          console.log("Команда відправлена: " + mode);
+          alert("Режим " + mode.slice(1) + " активовано!");
+        } else {
+          console.log("Помилка: " + response.status);
+        }
+      })
+      .catch(error => {
+        console.log("Помилка: " + error);
+        // Прибираємо alert про помилку, бо режими все одно змінюються
+      });
+  }
   </script>
 </body>
 </html>
