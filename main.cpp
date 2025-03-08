@@ -25,8 +25,8 @@
 #define LED_PIN 25
 #define NUM_LEDS 16
 
-const char* ssid = "Vidrodgennya_2G";
-const char* password = "960010Kalash";
+const char* ssid = "mySSID";
+const char* password = "myPass";
 
 CRGB leds[NUM_LEDS]; // масив для зберігання кольорів світлодіодів
 AsyncWebServer server(80); // об’єкт асинхронного веб-сервера, що слухає порт 80 (стандартний HTTP-порт)
